@@ -8,7 +8,7 @@ const About = ({configData})=> {
     return (
         <Layout>
             <Head>
-                <title>{configData.siteTitle} - About</title>
+                <title>{configData.siteTitle} - Projects</title>
                 <meta name="description" content={configData.siteDescription}/>
                 <meta name="keywords" content={configData.siteKeywords}/>
                 <meta name="author" content={configData.author}/>
