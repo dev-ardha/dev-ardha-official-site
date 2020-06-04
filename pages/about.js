@@ -124,9 +124,6 @@ const AboutStyled = Styled.div`
     .python svg{
         fill:#4b8bbe;
     }
-    .gatsby svg{
-        fill:#663399;
-    }
     .jquery svg{
         fill:#0769ad;
     }
