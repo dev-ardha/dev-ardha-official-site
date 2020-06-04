@@ -1,9 +1,12 @@
 @media(max-width:1000px){
     .blog-post{
         flex-direction: column;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+    
     }
     .post-image{
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
 
         img{
             width: 100%;
@@ -24,7 +27,7 @@
 }
 
 @media(max-width:568px){
-    ul li{
+    .navbar ul li{
         padding: 1.25rem 1rem !important;
         font-size: .7rem !important;
     }
