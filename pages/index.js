@@ -13,6 +13,7 @@ const Home = ({posts, config})=> {
         <meta name="keywords" content={config.siteKeywords}/>
         <meta name="author" content={config.author}/>
       </Head>
+      <div className="message">#BlackLivesMatter</div>
       <div className="content">
         <ul>
           {
@@ -33,6 +34,16 @@ const Home = ({posts, config})=> {
           }
         </ul>
       </div>
+      <style jsx>{`
+      
+      .message{
+        width:100%;
+        text-align:center;
+        transform:translateY(2rem);
+        color:#fff;
+      }
+
+      `}</style>
     </Layout>
   )
 }
