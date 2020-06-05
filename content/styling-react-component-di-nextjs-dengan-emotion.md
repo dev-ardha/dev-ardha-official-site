@@ -1,5 +1,5 @@
 ---
-title: "Styling React Component di Next.js dengan Emotion (CSS-In-JS)"
+title: "Styling React Component di Next.js dengan Emotion"
 author: "dev.ardha"
 date: "2020-06-05"
 tags: ['CSS', 'Javascript', 'Reactjs']
