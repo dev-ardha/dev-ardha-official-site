@@ -15,7 +15,7 @@ npm install
 
 ```
 
-Then, run the development server (localhost://3000)
+Then, run the development server (http://localhost:3000)
 ```bash
 npm run dev
 ```
