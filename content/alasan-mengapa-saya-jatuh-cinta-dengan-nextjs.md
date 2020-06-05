@@ -1,7 +1,7 @@
 ---
 title: "Alasan Mengapa Saya Jatuh Cinta dengan Next.js"
 author: "dev.ardha"
-date: "3 June 2020"
+date: "2020-06-03"
 tags: ['Nextjs', 'React']
 image: "https://resir014.xyz/static/5295478eede2c6c927ea8e111bcad25b/a8101/white-nextjs.png"
 imageAlt: "programmer life"
