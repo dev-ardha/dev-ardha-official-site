@@ -1,7 +1,7 @@
 ---
 title: "Welcome to My Blog!"
 author: "dev.ardha"
-date: "2 June 2020"
+date: "2020-06-02"
 tags: ['Dev Diary']
 image: "https://www.tinyquip.com/wp-content/uploads/2020/01/kali-linux1.png"
 imageAlt: "programmer life"
