@@ -27,7 +27,6 @@ const About = ({configData})=> {
                                 <span>React.js, Express, Node.js, MongoDB</span>
                             </div>
                         </li>
-                        <hr/>
                     </ol>
                     </div>
                 </div>
@@ -49,10 +48,6 @@ const AboutStyled = Styled.div`
         text-align:center;
         margin-bottom:10px;
         }
-    }
-    hr{
-        border: 1px solid #eee;
-        margin:3rem 0;
     }
     .image{
         display: flex;

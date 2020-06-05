@@ -5,6 +5,18 @@ import Head from'next/head'
 
 const Home = ({posts, config})=> {
 
+  function compare( a, b ) {
+    if ( a.frontmatter.date < b.frontmatter.date ){
+      return 1;
+    }
+    if ( a.frontmatter.date > b.frontmatter.date ){
+      return -1;
+    }
+    return 0;
+  }
+
+  const sorted = posts.sort( compare );
+  
   return (
     <Layout>
       <Head>
@@ -17,7 +29,7 @@ const Home = ({posts, config})=> {
       <div className="content">
         <ul>
           {
-            posts.map((post, index) => {
+            sorted.map((post, index) => {
               return(
                 <BlogPost
                 key={index}
@@ -40,6 +52,7 @@ const Home = ({posts, config})=> {
         width:100%;
         text-align:center;
         transform:translateY(2rem);
+        
         color:#fff;
       }
 

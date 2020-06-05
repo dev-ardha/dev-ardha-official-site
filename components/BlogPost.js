@@ -28,8 +28,9 @@ const BlogPost = ({title, author, date, img, body, tags, slug})=> {
 
 const BlogPostStyled = Styled.div`
     display:flex;
-    margin-bottom:1rem;
-    padding-bottom:1rem;
+    border-bottom:1px solid #eee;
+    margin-bottom:2rem;
+    padding-bottom:2rem;
 
     .post-image{
         display: flex;

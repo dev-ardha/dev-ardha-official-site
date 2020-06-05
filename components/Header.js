@@ -25,6 +25,9 @@ const Header = ()=> {
                isDark.value
                ? <style jsx global>{`
 
+                .blog-post{
+                    border-bottom:1px solid #0e0e0e !important;
+                }
                 .navbar, .footer{
                    border-color:#111 !important;
                    background-color:#111213;
