@@ -3,7 +3,7 @@ title: "Styling React Component di Next.js dengan Emotion"
 author: "dev.ardha"
 date: "2020-06-05"
 tags: ['CSS', 'Javascript', 'Reactjs']
-image: "https://1.bp.blogspot.com/-cuyNOV2XNrw/Xto4tbluNQI/AAAAAAAABJ8/sJhN7riOrDIA7awtJENj2kYzsLHytj8KwCNcBGAsYHQ/s1600/EmotionJs.png"
+image: "https://1.bp.blogspot.com/-WCS9HJhKJJM/Xto3Fj_WVWI/AAAAAAAABJg/TVD3dHg2HqUs6bMJFYne1Lhqic-57LRpwCNcBGAsYHQ/s1600/EmotionJs.png"
 imageAlt: "emotion css-in-js library"
 ---
 Di postingan kali ini saya akan memberikan sedikit tutorial mengenai sebuah library keren yang sangat membantu dalam pengembangan blog ini. Library itu adalah Emotion. Emotion merupakan sebuah library CSS-In-JS yang flexible dan memungkinkan kita untuk menuliskan syntax css di dalam komponen React kita.
