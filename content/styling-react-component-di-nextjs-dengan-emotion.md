@@ -16,6 +16,7 @@ npm i @emotion/core @emotion/styled
 npm i -S emotion-theming
 ```
 
+## Menerapkan Tema
 Oke, akan saya jelaskan secara singkat apa saja yang sudah kita install tadi. `@emotion/core` merupakan perantara antara Emotion dan React, karna sebenarnya, Emotion tidak hanya ditujukan untuk React saja. `@emotion/styled` merupakan dependencies yang memungkinkan kita untuk memberikan style terhadap komponen tertentu di React. Sedangkan `emotion-theming` merupakan dependencies yang membantu kita untuk menerapkan tema tertentu kepada keseluruhan halaman. Untuk lebih jelasnya, akan saya jelaskan nanti.
 
 Kemudian buka file `_app.js`. Apabila anda belum memilikinya, buat file dengan nama `_app.js` di dalam direktore `/pages` dan isikan dengan kode berikut.
@@ -33,7 +34,7 @@ function App({Component, pageProps}){
 export default App;
 ```
 
-Di kode tersebut kita meng-import `'emotion-theming'` yang berfungsi sebagai pengatur tema dasar yang akan kita gunakan nanti. Untuk membuat temanya, kita perlu mendefinisikan terlebih dahulu nama tema dan warnanya. Pertama, buatlah variabel theme yang berupa objek dan berisi aturan warnannya, kemudian letakan sebelum `function App`. Kodenya seperti berikut ini:
+Di kode tersebut kita mengimport `'emotion-theming'` yang berfungsi sebagai pengatur tema dasar yang akan kita gunakan nanti. Untuk membuat temanya, kita perlu mendefinisikan terlebih dahulu nama tema dan warnanya. Pertama, buatlah variabel theme yang berupa objek dan berisi aturan warnannya, kemudian letakan sebelum `function App`. Kodenya seperti berikut ini:
 
 ```jsx
 const defaultTheme = {
@@ -65,6 +66,7 @@ const defaultTheme = {
   }
 }
 
+// menerapkan tema ke komponen App
 function App({Component, pageProps}){
   return (
     <>
@@ -80,6 +82,7 @@ export default App;
 
 Dan tema pun sekarang sudah berhasil diterapkan ke aplikasi React Anda. Jika Anda cek, tentu saja tidak akan terjadi apa-apa karena kita belum memberikan styling kepada komponen kita. Mari kita beri sedikit styling yang cantik pada komponennya.
 
+## Styling React Component
 Sebagai contoh, kita akan memberikan styling kepada komponen `Navbar` sederhana. Pertama, buat dulu komponen `Navbar` nya.
 
 ```jsx
@@ -99,6 +102,7 @@ export default Navbar;
 Untuk menerapkan styling pada komponen tersebut, kita harus mengimport terlebih dahulu `@emotion/styled` yang sudah kita install tadi.
 
 ```jsx
+// import emotion styled
 import Styled from '@emotion/styled'
 
 const Navbar = () => {
@@ -119,6 +123,7 @@ Agar lebih mudah dipahami, langsung saja ke kode komponen yang sudah saya berika
 ```jsx
 import Styled from '@emotion/styled'
 
+// mengganti elemen 'div' dengan komponen yang telah diberi style
 const Navbar = () => {
   return(
     <NavbarStyled>
@@ -147,37 +152,79 @@ export default Navbar;
 
 Mari kita breakdown kode tadi.
 
-*Di baris 13* kita mendefinisikan komponen `NavbarStyled` dengan memanggil `Styled` kemduian diikuti `.div`. `div` di situ merupakan elemen yang ingin kita terapkan terhadap si komponen. Jika kita melihat kembali ke kode sebelumnya, kita memakai elemen `div` untuk membuat navbar-nya. (Jika ingin navbar Anda menggunakan tag `header` yang harus kalian tulis adalah `.header`)
+Pertama kita memanggil komponen `NavbarStyled`, yaitu komponen navbar yang sudah diberikan styling untuk menggantikan komponen `div` yang sebelumnya kita pakai. *Apa itu NavbarStyled?*, itu merupakan komponen yang sudah diberi styling dengan Emotion.
 
-*Di baris selanjutnya* kita menuliskan CSS seperti biasa untuk memberikan styling kepada komponen. **Wait**, bisa nesting? Yap, benar sekali. Emotion memungkinkan kita untuk menggunakan teknik nesting seperti yang biasa digunakan Sass dalam styling komponen, seperti yang saya terapkan pada elemen `a` di kode tersebut.
+Kemudian ita mendefinisikan komponen `NavbarStyled` yang sebelumnya sudah kita panggil tadi, dengan cara memanggil `Styled` kemduian diikuti `.div`. `div` di situ merupakan elemen yang ingin kita terapkan terhadap si komponen. Jika kita melihat kembali ke kode sebelumnya, kita memakai elemen `div` untuk membuat navbar-nya. (Jika ingin navbar Anda menggunakan tag `header` yang harus kalian tulis adalah `.header`)
+
+Untuk menerapkan style, kita tinggal menuliskan saja CSS seperti yang biasa kita kenal. *Wait*, bisa nesting? Yap, benar sekali. Emotion memungkinkan kita untuk menggunakan teknik nesting seperti yang biasa digunakan Sass dalam styling komponen, seperti yang saya terapkan pada elemen `a` di kode tersebut.
 
 Jika Anda lihat, saya juga menuliskan javascript di dalam css tersebut.
 
 ```jsx
-a{
-  padding:1rem 2rem;
-  color:${props => props.defaultTheme.colors.primary};
-}
+const NavbarStyled = Styled.div`
+  ...
+  
+  a{
+    padding:1rem 2rem;
+    color:${props => props.theme.colors.};
+  }
+`
 ```
 
 Di situ saya memanggil tema `defaultTheme` yang sudah kita definisikan di file `_App.js`, melalui props. Sehingga, elemen `a` tersebut akan memiliki warna `#ff1493`.
 
-*Di baris 5 dan 9* kita memanggil komponen `NavbarStyled`, yaitu komponen navbar yang sudah diberikan styling untuk menggantikan komponen `div` yang sebelumnya kita pakai.
+## Menerapkan Global Style
+Tadi kita sudah berhasil untuk menerapkan style di komponen tertentu. Lalu bagaimaan untuk menerapkan global style agar dapat dipakai di semua komponen?
 
+Untuk menerapkan global style, pertama buat sebuah file, bisa Anda beri nama `GlobalStyle` atau `Global`. Lalu isikan file tersebut dengan kode berikut ini:
+
+```jsx
+import { Global, css } from '@emotion/core';
+
+const GlobalStyles = ()=> {
+  return(
+    <>
+      <Global styles={css`
+      
+      body{
+        font-size:16px;
+        color:#000;
+        backgroudn:#fff;
+      }
+      
+      `}/>
+    </>
+  )
+}
+
+export default GlobalStyles;
+```
+
+Di kode tersebut, pertama yang kita lakukan adalah mengimport `Global` dan `css` dari `@emotion/core`. Kemudian kita buat functional component dengan nama `GlobalStyles` yang isinya me-return Global css. *Easy*, yang perlu kita lakukan selanjutnya hanyalah menyertakan komponen GlobalStyles tersebut di file `_App.js` seperti berikut.
+
+```jsx
+...
+
+import GlobalStyles from '../components/styles/GlobalStyles'
+
+...
+
+export default function App({Component, pageProps}){
+
+  return (
+      <>
+        <GlobalStyles/>
+        <ThemeProvider theme={theme}>
+            <Component {...pageProps} />
+        </ThemeProvider>
+    </>
+  )
+}
+```
 Sekarang coba save, dan lihat hasilnya. Cantik. Selamat, karang Emotion sudah berhasil diterapkan ke aplikasi React.js Anda!
 
 Sekarang mungkin Anda bertanya-tanya, mengapa banyak orang memakain CSS-In-JS padahal styling di CSS biasa atau Styled JSX lebih mudah?
 
-Saya akan berikan alasan kuatnya. Dengan menggunakan CSS-In-JS, Anda bisa lebih fleksibel mengatur styling komponen React Anda. Di awal, kita mendefinisikan tema `defaultTheme` dan membagikannya melalui props. Itu akan memudakna anda untu mengatur tema website Anda.
-
-Apabila Anda ingin membuat tema dark mode untuk website, Anda bisa mendefinisikan tema baru dan memberikan pengkodisian terhadap penggunaan temanya. Contoh sederhananya bisa Anda lihat di kode berikut.
-
-```jsx
-<ThemeProvider theme={isDark ? darkTheme : defaultTheme} >
-  ...
-</ThemeProvider>
-```
-
-Sederhananya, kode di atas maksudnya, jika `isDark` bernilai `true` maka akan menggunakan tema `darkTheme`. Dan jika tidak, maka akan menggunakan tema `defaultTheme`. Sederhana, kan? Itulah mengapa CSS-In-JS sangat fleksibel untuk digunakan dalam styling komponen React.js.
+Saya akan berikan alasan kuatnya. Dengan menggunakan CSS-In-JS, Anda bisa lebih fleksibel mengatur styling komponen React Anda. Di awal, kita mendefinisikan tema `defaultTheme` dan membagikannya melalui props. Itu akan memudakna anda untuk mengatur tema website Anda. Semisal Anda ingin menerapkan dark mode, Anda bisa mendefinisikan tema baru dan membuat pengkondisian tema yang akan digunakan di `ThemeProvider`.
 
 Oke, sekian dulu tutorial kali ini. Sampai jumpa di postingan selanjutnya!
