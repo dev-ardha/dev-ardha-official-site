@@ -1,7 +1,7 @@
 ---
 title: "Styling React Component di Next.js dengan Emotion (CSS-In-JS)"
 author: "dev.ardha"
-date: "5 June 2020"
+date: "2020-06-05"
 tags: ['CSS', 'Javascript', 'Reactjs']
 image: "https://objectpartners.com/wp-content/uploads/2017/11/52-emotion.png"
 imageAlt: "emotion css-in-js library"
