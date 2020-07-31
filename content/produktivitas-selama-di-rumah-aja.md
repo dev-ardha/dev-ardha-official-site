@@ -2,7 +2,7 @@
 title: "Produktivitas di Rumah Aja"
 author: "dev.ardha"
 date: "2020-07-31"
-tags: ['GraphQL']
+tags: ['Dev Diary']
 image: "https://miro.medium.com/max/5000/1*bmsx9Otr24FXeHI5o0OBRA.jpeg"
 imageAlt: "produktivitas saya selama masa pandemi"
 ---
