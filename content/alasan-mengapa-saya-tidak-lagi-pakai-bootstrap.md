@@ -1,7 +1,7 @@
 ---
 title: "Alasan Mengapa Saya Tidak Lagi Pakai Bootstrap"
 author: "dev.ardha"
-date: "2020-6-26"
+date: "2020-06-26"
 tags: ['Frontend', 'Bootstrap', 'CSS']
 image: "https://www.vzhurudolu.cz/assets/img/content/src/vdbootstraplogofialove-.jpg"
 imageAlt: "Bootstrap"
